@@ -1,0 +1,70 @@
+@media (max-width: 767px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .header {
+        padding-top: 32px;
+
+        &__input {
+            display: none;
+        }
+    }
+
+    .menu {
+        display: none;
+
+        &__mob {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+    }
+
+    .logo {
+        &__img {
+            width: 99px;
+        }
+
+    }
+
+    .title {
+        font-size: 48px;
+        line-height: 58px;
+        text-align: center;
+        max-width: 343px;
+    }
+
+    .top {
+        &__text {
+            text-align: center;
+            font-size: 16px;
+            line-height: 32px;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .link{
+        font-size: 14px;
+    }
+    .main__heading{
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .for{
+        grid-template-columns: repeat(4, 1fr);
+        &__item{
+            grid-column: 1 / -1;
+            height: 375px;
+            font-size: 28px;
+            &_big{
+                height: 244px;
+            }
+        }
+    }
+}
