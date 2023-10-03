@@ -22,15 +22,13 @@ a {
 .top {
   padding-left: 120px;
   padding-right: 120px;
+  height: 735px;
+  flex-shrink: 0;
+  background-image: url(img/topback.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-  &__content {
-    height: 735px;
-    flex-shrink: 0;
-    background-image: url(img/topback.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
 }
 
 .header {
@@ -77,8 +75,13 @@ a {
     font-size: 16px;
     line-height: 20px;
     color: $color-text;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  &__mob{
+
+  &__mob {
     display: none;
   }
 }
@@ -110,6 +113,10 @@ a {
   line-height: 24px;
   text-decoration-line: underline;
   color: $color-text;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .for-box {
@@ -174,6 +181,10 @@ a {
   width: 378px;
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &__img {
     width: 100%;
@@ -249,6 +260,10 @@ a {
   font-weight: 400;
   line-height: 24px;
   text-decoration-line: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .footer {
@@ -273,16 +288,9 @@ a {
 
   &__info {
     display: flex;
+    flex-wrap: wrap;
     gap: 129px;
   }
-}
-
-.interier {
-  color: #000;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
 }
 
 .footer__menu,
@@ -297,10 +305,7 @@ a {
   font-size: 24px;
   line-height: 29px;
   color: #000000;
-  margin-bottom: 12px;
   background: #F7F6F6;
-  padding-top: 32px;
-  padding-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -315,6 +320,7 @@ a {
   text-decoration: none;
 
   &:hover {
+    color: #000;
     text-decoration: underline;
   }
 }
@@ -323,17 +329,23 @@ a {
   display: flex;
   align-items: center;
   gap: 20px;
+
+  &_img:hover path {
+    fill: #000;
+  }
+
+  &_img path {
+    transition: fill 1.3s;
+  }
 }
 
 .footer__form {
-  padding-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 
 .footer__text {
-  margin-bottom: 4px;
+  margin-bottom: 16px;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -349,6 +361,7 @@ a {
   height: 46px;
   padding-left: 24px;
   padding-right: 24px;
+  margin-bottom: 12px;
   box-sizing: border-box;
   font-size: 15px;
   line-height: 18px;
@@ -377,6 +390,12 @@ a {
   font-size: 14px;
   line-height: 17px;
   color: #000000;
+  transition: all .3s;
+
+  &:hover {
+    color: #FFF;
+    background-color: #000;
+  }
 }
 
 /*Каталог*/
@@ -389,7 +408,7 @@ a {
 }
 
 .catalog__info {
-  padding-top: 32px;
+  padding-top: 75px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -407,36 +426,54 @@ a {
   line-height: 32px;
 }
 
-.color {
+.breadcrumbs {
   color: #000;
+
+  &:hover span {
+    text-decoration: underline;
+  }
 }
 
 .select {
-  display: flex;
-  justify-content: flex-end;
+  position: relative;
   width: 288px;
-  flex-shrink: 0;
-  min-width: 15ch;
-  max-width: 30ch;
-  padding: 0.25em 0.5em;
-  cursor: pointer;
-  border-radius: 20px;
-  border: 1px solid #C4C4C4;
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-}
 
-.standart__select {
-  margin-left: 33px;
-  width: 20px;
-  height: 21px;
+
+  
+}
+.select select {
+  height: 41px;
   flex-shrink: 0;
-  color: #000;
+  display: block;
+  padding-left: 16px;
+  padding-right: 22px;
+  width: 100%; /* от ширины блока div */
+  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: normal; 
+  border-radius: 20px;
+  border: 1px solid #C4C4C4;
+ 
 }
+.select::after {
+  content:  url(img/Polygon_11.svg);
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  z-index: 1;
+  margin-top: -5px;
+  width: 20px;
+  height: 11px;
+  background-image: url(img/Polygon\ 11.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
 
 .bottom__link_catalog {
   width: 155px;
@@ -451,6 +488,84 @@ a {
 }
 
 /*Корзина*/
+
+
+
+@-webkit-keyframes jello-diagonal-1 {
+  0% {
+    -webkit-transform: skew(0deg 0deg);
+    transform: skew(0deg 0deg);
+  }
+
+  30% {
+    -webkit-transform: skew(25deg 25deg);
+    transform: skew(25deg 25deg);
+  }
+
+  40% {
+    -webkit-transform: skew(-15deg, -15deg);
+    transform: skew(-15deg, -15deg);
+  }
+
+  50% {
+    -webkit-transform: skew(15deg, 15deg);
+    transform: skew(15deg, 15deg);
+  }
+
+  65% {
+    -webkit-transform: skew(-5deg, -5deg);
+    transform: skew(-5deg, -5deg);
+  }
+
+  75% {
+    -webkit-transform: skew(5deg, 5deg);
+    transform: skew(5deg, 5deg);
+  }
+
+  100% {
+    -webkit-transform: skew(0deg 0deg);
+    transform: skew(0deg 0deg);
+  }
+}
+
+@keyframes jello-diagonal-1 {
+  0% {
+    -webkit-transform: skew(0deg 0deg);
+    transform: skew(0deg 0deg);
+  }
+
+  30% {
+    -webkit-transform: skew(25deg 25deg);
+    transform: skew(25deg 25deg);
+  }
+
+  40% {
+    -webkit-transform: skew(-15deg, -15deg);
+    transform: skew(-15deg, -15deg);
+  }
+
+  50% {
+    -webkit-transform: skew(15deg, 15deg);
+    transform: skew(15deg, 15deg);
+  }
+
+  65% {
+    -webkit-transform: skew(-5deg, -5deg);
+    transform: skew(-5deg, -5deg);
+  }
+
+  75% {
+    -webkit-transform: skew(5deg, 5deg);
+    transform: skew(5deg, 5deg);
+  }
+
+  100% {
+    -webkit-transform: skew(0deg 0deg);
+    transform: skew(0deg 0deg);
+  }
+}
+
+
 .top-cart {
   height: 400px;
   background-image: url(img/top_cart.jpg);
@@ -504,6 +619,12 @@ a {
     stroke-width: 0.5px;
     stroke: #CACDD8;
     border-bottom: 1px solid grey;
+
+    &_line {
+      stroke-width: 0.5px;
+      stroke: #CACDD8;
+      border-bottom: 1px solid grey;
+    }
   }
 
   &__item {
@@ -582,14 +703,13 @@ a {
   border-color: transparent;
   background: #F7F6F6;
   display: flex;
-  width: 47px;
-  height: 27px;
+  width: 71px;
+  height: 51px;
   flex-direction: row;
   justify-content: center;
   flex-shrink: 0;
   color: var(--Color---7, #000);
   text-align: center;
-  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -605,6 +725,7 @@ a {
 }
 
 .cart__button {
+  background: #FFF;
   margin-top: 18px;
   width: 205px;
   height: 37px;
@@ -619,6 +740,8 @@ a {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: all .3s;
+
 
   &:hover {
     border-radius: 50px;
@@ -647,9 +770,9 @@ a {
 }
 
 .heading__order {
+  margin-bottom: 25px;
   color: #000;
   text-align: center;
-  font-family: Poppins;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -663,9 +786,10 @@ a {
 }
 
 .heading__price {
+  margin-top:64px;
   color: #000;
   text-align: center;
-  font-size: 24px;
+  font-size: 23px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -674,16 +798,16 @@ a {
 .form {
   display: flex;
   flex-direction: column;
-  -moz-column-gap: 41px;
-  column-gap: 41px;
+  gap: 44px ;
   width: 288px;
+  
 
   &__item {
     padding-bottom: 3px;
     outline: none;
     border: none;
     border-bottom: 1px solid grey;
-    height: 55px;
+    height: auto;
     background: transparent;
     color: #000;
     font-size: 14px;
@@ -700,8 +824,12 @@ a {
     }
   }
 }
+.form::placeholder{
+  padding-bottom: 0px;
+}
 
 .button {
+  background: #F7F6F6;
   font-family: Montserrat;
   display: flex;
   width: 290px;
@@ -717,6 +845,9 @@ a {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: all .3s;
+  animation: jello-diagonal-1 0.8s 1s 3 both;
+
 
   &:hover {
     border-radius: 50px;
@@ -727,6 +858,7 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
   }
 }
 
